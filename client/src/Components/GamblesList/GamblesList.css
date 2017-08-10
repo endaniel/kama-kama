@@ -1,0 +1,16 @@
+/* .gamblesList{
+    margin-left: 80%
+} */
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+@media only screen and (min-width: 800px){
+    table{
+        width: 50%;
+        margin-right: 25%;
+    }
+}

@@ -1,8 +1,10 @@
 import React from 'react';
+import Gamble from '../Gamble/Gamble';
+import './GamblesList.css'
 
 class GamblesList extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {gambles: []}
     }
 
@@ -19,7 +21,11 @@ class GamblesList extends React.Component{
     render(){
         return(
             <div id="gamblesList">
-                {this.state.gambles.map(g => <h1>{g}</h1>)}
+                <table>
+                    <tbody>
+                        {this.state.gambles.map(g => <Gamble gamble={g}/>)}
+                    </tbody>
+                </table>
             </div>
          )
     }

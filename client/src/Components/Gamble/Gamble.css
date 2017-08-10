@@ -1,0 +1,15 @@
+.gamlbeRow{
+    border-bottom: 1px solid #ddd;
+}
+
+td{
+    border-bottom: 1px solid #ddd;
+}
+
+.gambleBtn{
+    color: white;
+    background-color: #4CAF50;
+    border-radius:  5px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2}
