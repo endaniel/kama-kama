@@ -3,10 +3,6 @@ import GambleInfo from '../GambleInfo/GambleInfo';
 import './Gamble.css';
 
 class Gamble extends React.Component{
-    constructor(props){
-        super(props);
-    }
-
     render(){
         return(
             <tr className="gambleRow">
