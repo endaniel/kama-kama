@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GamblesListContainer from '../GamblesListContainer/GamblesListContainer'
+import MatchesListContainer from '../MatchesListContainer/MatchesListContainer'
 import Header from '../Header/Header'
 import './App.css';
 
@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <GamblesListContainer/>
+        <MatchesListContainer/>
       </div>
     );
   }

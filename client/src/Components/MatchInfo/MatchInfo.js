@@ -1,5 +1,5 @@
 import React from 'react';
-import './GambleInfo.css';
+import './MatchInfo.css';
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -13,8 +13,7 @@ const customStyles = {
   }
 };
  
-
-class GambleInfo extends React.Component{
+class MatchInfo extends React.Component{
     constructor(props){
         super(props);
         this.state = {modalIsOpen: false};
@@ -43,12 +42,12 @@ class GambleInfo extends React.Component{
             contentLabel="Example Modal"
           >
   
-            <h2>{this.props.gamble.match}</h2>
-            <h2>{this.props.gamble.date} - תאריך</h2>
+            <h2>{this.props.match.match}</h2>
+            <h2>{this.props.match.date} - תאריך</h2>
           </Modal>
       </div>
         );
     }
 }
 
-export default GambleInfo;
+export default MatchInfo;

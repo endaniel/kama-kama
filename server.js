@@ -19,20 +19,20 @@ let option = {
 };
 const dbUri = "mongodb://admin:admin@dcluster-shard-00-00-rq6aa.mongodb.net:27017,dcluster-shard-00-01-rq6aa.mongodb.net:27017,dcluster-shard-00-02-rq6aa.mongodb.net:27017/myDb?ssl=true&replicaSet=DCluster-shard-0&authSource=admin"
 
-let insertGambles = function(db, callback){
-  const gambles = [{match: 'מכבי ת"א נגד בני סכנין', sport: 'כדורגל', date: '17/08/2017'},
-          {match: 'מכבי חיפה נגד מכבי אילת', sport: 'כדורסל', date: '19/08/2017'}]
-  
-  db.collection("gambles").insertMany(gambles, function(err, res){
-    if (err) throw err;
-    console.log("Number of documents inserted: " + res.insertedCount);
-    callback();
-  })
+let insertMatches = function(db, callback){
+    const matches = [{name: 'מכבי ת"א נגד בני סכנין', sport: 'כדורגל', date: '17/08/2017'},
+          {name: 'מכבי חיפה נגד מכבי אילת', sport: 'כדורסל', date: '19/08/2017'}]
+
+    db.collection("matches").insertMany(matches, function(err, res){
+        if (err) throw err;
+        console.log("Number of documents inserted: " + res.insertedCount);
+        callback();
+    })
 }
 let initDb = function(db, callback){
-  db.collection("gambles").count(function(err, count){
+  db.collection("matches").count(function(err, count){
       if(!err && count === 0){
-        insertGambles(db, callback);
+        insertMatches(db, callback);
       }
       else{
         callback();
@@ -51,7 +51,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/api/a', (req, res) => { 
     MongoClient.connect(dbUri, (err, db) => {
-        db.collection("gambles").find({}).toArray((err, result) => {
+        db.collection("matches").find({}).toArray((err, result) => {
             if (err) throw err;
             res.json(result);
             db.close();
