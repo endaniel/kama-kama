@@ -33,19 +33,19 @@ class GambleInfo extends React.Component{
     render(){
         
         return(
-  <div>
-        <button onClick={this.openModal}>מידע</button>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
- 
-          <h2>{this.props.gamble.match}</h2>
-          <h2>{this.props.gamble.date} - תאריך</h2>
-        </Modal>
+        <div>   
+          <button onClick={this.openModal}>מידע</button>
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+  
+            <h2>{this.props.gamble.match}</h2>
+            <h2>{this.props.gamble.date} - תאריך</h2>
+          </Modal>
       </div>
         );
     }
