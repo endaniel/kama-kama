@@ -8,7 +8,7 @@ class MatchesList extends React.Component{
             <div id="matchesList">
                 <table>
                     <tbody>
-                        {this.props.matches.map(m => <Match match={m}/>)}
+                        {this.props.matches.map(m => <Match match={m} key={m._id}/>)}
                     </tbody>
                 </table>
             </div>
