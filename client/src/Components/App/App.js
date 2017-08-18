@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MatchesListContainer from '../MatchesListContainer/MatchesListContainer'
-import Header from '../Header/Header'
+import Header from '../Header/Header';
+import FilteredMatchesTable from '../FilteredMatchesTable/FilteredMatchesTable';
 import './App.css';
 
 class App extends Component {
@@ -14,7 +14,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <MatchesListContainer/>
+        <div className="appContent">
+          <FilteredMatchesTable/>
+        </div>
       </div>
     );
   }
