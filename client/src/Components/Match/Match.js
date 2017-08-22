@@ -1,5 +1,6 @@
 import React from 'react';
 import MatchInfo from '../MatchInfo/MatchInfo';
+import { Link } from 'react-router-dom';
 import './Match.css';
 
 class Match extends React.Component{
@@ -7,7 +8,7 @@ class Match extends React.Component{
         return(
             <tr className="matchRow">
                 <td className="matchName">{this.props.match.name}</td>
-                <td><button className="matchBtn">המר</button></td>
+                <td><Link to={"/gamble/" + this.props.match._id}>המר</Link></td>
                 <td><MatchInfo match={this.props.match}/></td>
             </tr>
         )
